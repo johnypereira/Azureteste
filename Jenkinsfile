@@ -4,7 +4,7 @@ node {
   }
   
   stage('deploy') {
-    def webAppName = 'TESTEWEBAPPJENKINS7'
+    def webAppName = 'TESTEWEBAPPJENKINS8'
     def resourceGroup = 'RG_DEV_PHP' 
 	def plan = 'SPFREE'
 	  
