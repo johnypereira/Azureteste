@@ -3,10 +3,6 @@ node {
     checkout scm
   }
   
-  stage('build') {
-    sh 'mvn clean package'
-  }
-  	
   stage('deploy') {
     def webAppName = 'TESTEWEBAPPJENKINS'
     def resourceGroup = 'RG_DEV_PHP' 
