@@ -4,7 +4,7 @@ node {
   }
   
   stage('deploy') {
-    def webAppName = 'TESTEWEBAPPJENKINS2'
+    def webAppName = 'TESTEWEBAPPJENKINS3'
     def resourceGroup = 'RG_DEV_PHP' 
 	def plan = 'SPFREE'
 	  
@@ -20,7 +20,7 @@ node {
     }
 	
 	 // Create WebAPp
-	 sh "az webapp create --name ${webAppName} --resource-group RG_DEV_PHP --plan SPFREE"  
+	  sh "az webapp create --name ${webAppName} --resource-group ${resourceGroup} --plan ${plan}"  
 	 // sh 'az webapp create --name ${webAppName} --resource-group  ${resourceGroup} --plan ${plan}'
 	  sh 'az logout'
   }
