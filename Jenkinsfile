@@ -4,7 +4,7 @@ node {
   }
   
   stage('deploy') {
-    def webAppName = 'TESTEWEBAPPJENKINS'
+    def webAppName = 'TESTEWEBAPPJENKINS2'
     def resourceGroup = 'RG_DEV_PHP' 
 	def plan = 'SPFREE'
         // login Azure
@@ -12,12 +12,12 @@ node {
       sh '''
         az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
         az account set -s $AZURE_SUBSCRIPTION_ID
-	az webapp create --name TESTEWEBAPPJENKINS --resource-group  RG_DEV_PHP --plan SPFREE  
+	
 	   '''
     }
 	
 	 // Create WebAPp
-	 
+	 sh 'az webapp create --name' $webAppName '--resource-group RG_DEV_PHP --plan SPFREE'  
 	 // sh 'az webapp create --name ${webAppName} --resource-group  ${resourceGroup} --plan ${plan}'
 	  sh 'az logout'
   }
