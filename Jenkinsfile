@@ -7,6 +7,9 @@ node {
     def webAppName = 'TESTEWEBAPPJENKINS2'
     def resourceGroup = 'RG_DEV_PHP' 
 	def plan = 'SPFREE'
+	  
+	  echo "${webAppName}"
+	  
         // login Azure
     withCredentials([azureServicePrincipal('azsrvprincipal')]) {
       sh '''
