@@ -20,7 +20,7 @@ node {
     }
 	
 	 // Create WebAPp
-	 sh 'az webapp create --name $webAppName resource-group RG_DEV_PHP --plan SPFREE'  
+	 sh 'az webapp create --name "${webAppName}" resource-group RG_DEV_PHP --plan SPFREE'  
 	 // sh 'az webapp create --name ${webAppName} --resource-group  ${resourceGroup} --plan ${plan}'
 	  sh 'az logout'
   }
