@@ -17,7 +17,7 @@ node {
 	
 	 // Create WebAPp
 	 
-	 sh 'az webapp create --name $webAppName --resource-group  $resourceGroup --plan $plan'
+	  sh 'az webapp create --name ${webAppName} --resource-group  ${resourceGroup} --plan ${plan}'
 	  sh 'az logout'
   }
 }
